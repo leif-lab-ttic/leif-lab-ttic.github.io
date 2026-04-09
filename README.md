@@ -1,2 +1,3 @@
-# lambda-lab.github.io
-Website for the Lambda Lab
+# Merrill Research Group
+
+Website for the Merrill Research Group (~~Lambda Lab~~) at the Toyota Technological Institute
