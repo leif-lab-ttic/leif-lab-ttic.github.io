@@ -1,0 +1,17 @@
+title: "Merrill Lab @ TTIC"
+description: "Research on learning, reasoning, and intelligence at the Toyota Technological Institute at Chicago."
+copyright: "© 2026 Merrill Lab"
+url: "https://merrill-lab.github.io"
+baseurl: ""
+
+markdown: kramdown
+permalink: /:path.html
+
+exclude:
+  - README.md
+  - LICENSE
+  - AGENTS.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - node_modules

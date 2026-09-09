@@ -1,0 +1,33 @@
+pi:
+  name: William Merrill
+  role: Assistant Professor, TTIC
+  url: https://lambdaviking.com/
+  photo: /assets/images/headshots/william-merrill.png
+
+students:
+  - name: Tarun Gupta
+    role: PhD Student, TTIC
+  - name: Selim Jerad
+    role: PhD Student, TTIC
+    url: https://selimjerad.github.io/
+  - name: Utkarsh Tiwari
+    role: PhD Student, TTIC
+    url: https://ut21.github.io/
+
+collaborators:
+  - name: Yashas Samaga
+    role: PhD Student, UW
+    url: https://github.com/YashasSamaga
+  - name: Sophie Hao
+    role: Assistant Professor, BU
+    url: https://notaphonologist.com/
+  - name: Jackson Petty
+    role: PhD Student, NYU
+    url: https://jacksonpetty.org/about/
+  - name: Ashish Sabharwal
+    role: Principal Research Scientist, Ai2
+    url: https://www.cs.cornell.edu/~sabhar/
+    photo: /assets/images/headshots/ashish-sabharwal.jpeg
+
+alumni:
+  - '<a href="https://www.yanhongli.com/">Yanhong Li</a> — Member of Technical Staff at Thinking Machines'

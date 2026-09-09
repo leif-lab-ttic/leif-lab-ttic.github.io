@@ -1,0 +1,63 @@
+---
+layout: default
+permalink: /people.html
+title: "People | Merrill Lab @ TTIC"
+description: "People in the Merrill Lab."
+eyebrow: People
+heading: Members and collaborators
+---
+<section class="people-section">
+  <h2>Principal Investigator</h2>
+  <article class="person-card pi-card">
+    <img class="avatar-photo large" src="{{ site.data.people.pi.photo | relative_url }}" alt="{{ site.data.people.pi.name }}" />
+    <div>
+      <h3><a href="{{ site.data.people.pi.url }}">{{ site.data.people.pi.name }}</a></h3>
+      <p class="person-role">{{ site.data.people.pi.role }}</p>
+    </div>
+  </article>
+</section>
+<section class="people-section">
+  <h2>PhD Students</h2>
+  <div class="people-grid">
+    {% for person in site.data.people.students %}
+    <article class="person-card">
+      {% if person.photo %}
+      <img class="avatar-photo" src="{{ person.photo | relative_url }}" alt="{{ person.name }}" />
+      {% else %}
+      <div class="avatar">{{ person.name | slice: 0 }}</div>
+      {% endif %}
+      <div>
+        <h3>{% if person.url %}<a href="{{ person.url }}">{{ person.name }}</a>{% else %}{{ person.name }}{% endif %}</h3>
+        <p class="person-role">{{ person.role }}</p>
+        <p>{{ person.interests }}</p>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+<section class="people-section">
+  <h2>Collaborators</h2>
+  <div class="people-grid compact">
+    {% for person in site.data.people.collaborators %}
+    <article class="person-card small">
+      {% if person.photo %}
+      <img class="avatar-photo" src="{{ person.photo | relative_url }}" alt="{{ person.name }}" />
+      {% else %}
+      <div class="avatar">{{ person.name | slice: 0 }}</div>
+      {% endif %}
+      <div>
+        <h3>{% if person.url %}<a href="{{ person.url }}">{{ person.name }}</a>{% else %}{{ person.name }}{% endif %}</h3>
+        <p class="person-role">{{ person.role }}</p>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+<section class="people-section">
+  <h2>Alumni</h2>
+  <ul class="alumni-list">
+    {% for entry in site.data.people.alumni %}
+    <li>{{ entry }}</li>
+    {% endfor %}
+  </ul>
+</section>
