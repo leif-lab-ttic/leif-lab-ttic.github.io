@@ -6,6 +6,10 @@
     <title>{{ page.title }}</title>
     <meta name="description" content="{{ page.description | default: site.description }}" />
     <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}" />
+    <link rel="icon" type="image/x-icon" href="{{ '/assets/favicon.ico' | relative_url }}" />
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/images/favicon/favicon-32x32.png' | relative_url }}" />
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/images/favicon/favicon-16x16.png' | relative_url }}" />
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/images/favicon/apple-touch-icon.png' | relative_url }}" />
   </head>
   <body>
     {% include nav.html %}
@@ -13,8 +17,18 @@
     <main>
       <section class="hero container">
         <div class="hero-copy">
-          <p class="eyebrow">{{ page.eyebrow }}</p>
-          <h1>{{ page.heading }}</h1>
+          <div class="hero-heading-row">
+            <img
+              class="hero-ship"
+              src="{{ '/assets/images/ship-logo.png' | relative_url }}"
+              alt=""
+              aria-hidden="true"
+            />
+            <div>
+              <p class="eyebrow">{{ page.eyebrow }}</p>
+              <h1>{{ page.heading }}</h1>
+            </div>
+          </div>
           <p class="lede">{{ page.lede }}</p>
           <div class="cta-row">
             <a class="button primary" href="{{ page.cta_primary.href | relative_url }}">{{ page.cta_primary.label }}</a>
@@ -25,8 +39,8 @@
         <aside class="hero-panel">
           <img
             class="lab-photo"
-            src="{{ '/assets/images/lab-photo.svg' | relative_url }}"
-            alt="Illustrated group photo of the Merrill Lab"
+            src="{{ '/assets/images/lab-photo-placeholder.svg' | relative_url }}"
+            alt="Lab group photo placeholder"
           />
         </aside>
       </section>

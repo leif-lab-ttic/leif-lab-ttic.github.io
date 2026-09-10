@@ -1,4 +1,8 @@
 title: "Merrill Lab @ TTIC"
+
+# UI feature flags
+hide_navbar_logo: true   # set false to show logo in the navbar brand
+hide_title_logo: false   # set true to hide logo in non-homepage page titles
 description: "Research on learning, reasoning, and intelligence at the Toyota Technological Institute at Chicago."
 copyright: "© 2026 Merrill Lab"
 url: "https://merrill-lab.github.io"

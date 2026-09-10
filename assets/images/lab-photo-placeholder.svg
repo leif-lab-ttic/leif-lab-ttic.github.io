@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" fill="none">
+  <!-- Background (4:3 aspect ratio matching iPhone camera) -->
+  <rect width="600" height="450" fill="#e8e4df"/>
+
+  <!-- Back row (5 people) -->
+  <ellipse cx="80"  cy="220" rx="28" ry="34" fill="#b5aca3"/>
+  <ellipse cx="80"  cy="172" rx="22" ry="23" fill="#b5aca3"/>
+
+  <ellipse cx="175" cy="215" rx="30" ry="36" fill="#a8a09a"/>
+  <ellipse cx="175" cy="165" rx="23" ry="24" fill="#a8a09a"/>
+
+  <ellipse cx="300" cy="210" rx="32" ry="38" fill="#b0a89f"/>
+  <ellipse cx="300" cy="158" rx="25" ry="26" fill="#b0a89f"/>
+
+  <ellipse cx="425" cy="215" rx="30" ry="36" fill="#a8a09a"/>
+  <ellipse cx="425" cy="165" rx="23" ry="24" fill="#a8a09a"/>
+
+  <ellipse cx="520" cy="220" rx="28" ry="34" fill="#b5aca3"/>
+  <ellipse cx="520" cy="172" rx="22" ry="23" fill="#b5aca3"/>
+
+  <!-- Front row (4 people) -->
+  <ellipse cx="120" cy="348" rx="34" ry="42" fill="#c4bbb3"/>
+  <ellipse cx="120" cy="292" rx="26" ry="27" fill="#c4bbb3"/>
+
+  <ellipse cx="230" cy="343" rx="36" ry="44" fill="#b8b0a7"/>
+  <ellipse cx="230" cy="284" rx="27" ry="28" fill="#b8b0a7"/>
+
+  <ellipse cx="370" cy="343" rx="36" ry="44" fill="#bdb6ad"/>
+  <ellipse cx="370" cy="284" rx="27" ry="28" fill="#bdb6ad"/>
+
+  <ellipse cx="480" cy="348" rx="34" ry="42" fill="#c4bbb3"/>
+  <ellipse cx="480" cy="292" rx="26" ry="27" fill="#c4bbb3"/>
+
+  <!-- Subtle label -->
+  <text x="300" y="434" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="#8a7f76" letter-spacing="2">GROUP PHOTO</text>
+</svg>
