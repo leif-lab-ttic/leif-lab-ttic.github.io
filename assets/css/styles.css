@@ -1,3 +1,5 @@
+---
+---
 :root {
   --bg: #f7f4ef;
   --panel: #fffdf9;
@@ -5,8 +7,8 @@
   --ink: #1d1c1a;
   --muted: #66615d;
   --line: rgba(29, 28, 26, 0.12);
-  --brand: #7f2a23;
-  --brand-dark: #5b1e1a;
+  --brand: {{ site.brand_color | default: "#006eb6" }};
+  --brand-dark: {{ site.brand_color_dark | default: "#005494" }};
   --gold: #caa35d;
   --shadow: 0 14px 30px rgba(33, 29, 25, 0.06);
 }
@@ -25,12 +27,15 @@ body {
   background: var(--bg);
   color: var(--ink);
   line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 a {
   color: var(--brand-dark);
   text-decoration: underline;
-  text-decoration-color: var(--brand);
+  text-decoration-color: var(--brand-dark);
   text-underline-offset: 2px;
 }
 
@@ -94,12 +99,16 @@ img {
   transition: color 0.2s ease;
 }
 
-.nav-links a:hover,
 .nav-links a.active {
   color: var(--brand-dark);
 }
 
+.nav-links a:hover {
+  color: var(--brand);
+}
+
 main {
+  flex: 1;
   padding-bottom: 4rem;
 }
 
@@ -113,7 +122,7 @@ main {
 
 .eyebrow {
   margin: 0 0 0.7rem;
-  color: var(--brand);
+  color: var(--brand-dark);
   text-transform: uppercase;
   letter-spacing: 0.12em;
   font-size: 0.74rem;
@@ -126,7 +135,7 @@ main {
 }
 
 .eyebrow a:hover {
-  text-decoration: underline;
+  color: var(--brand);
 }
 
 h1,
@@ -185,8 +194,13 @@ h3 {
 }
 
 .button.primary {
-  background: var(--brand);
+  background: var(--brand-dark);
   color: white;
+  border-color: var(--brand-dark);
+}
+
+.button.primary:hover {
+  background: var(--brand);
   border-color: var(--brand);
 }
 
@@ -195,10 +209,19 @@ h3 {
   color: var(--brand-dark);
 }
 
+.button.secondary:hover {
+  color: var(--brand);
+}
+
 .button.accent {
   background: var(--brand-dark);
   color: white;
   border-color: var(--brand-dark);
+}
+
+.button.accent:hover {
+  background: var(--brand);
+  border-color: var(--brand);
 }
 
 .button.small {
@@ -341,6 +364,10 @@ h3 {
   text-underline-offset: 2px;
 }
 
+.publication-note a:hover {
+  color: var(--brand);
+}
+
 .two-column {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
@@ -414,7 +441,6 @@ h3 {
 
 .lab-member {
   text-decoration: underline;
-  text-decoration-color: var(--brand);
   text-underline-offset: 2px;
 }
 
@@ -504,7 +530,7 @@ h3 {
 }
 
 .person-card h3 a:hover {
-  text-decoration: underline;
+  color: var(--brand);
 }
 
 .person-role {
@@ -523,6 +549,7 @@ h3 {
 }
 
 .alumni-list a:hover {
+  color: var(--brand);
   text-decoration: underline;
 }
 

@@ -1,7 +1,7 @@
 <header class="site-header">
   <nav class="nav container" aria-label="Main navigation">
     <a class="brand" href="{{ '/' | relative_url }}">
-      {% unless site.hide_navbar_logo %}<img src="{{ '/assets/images/ship-logo.png' | relative_url }}" alt="" class="nav-logo" aria-hidden="true" />{% endunless %}
+      {% if site.logo_path and site.hide_navbar_logo != true %}<img src="{{ '/' | append: site.logo_path | relative_url }}" alt="" class="nav-logo" aria-hidden="true" />{% endif %}
       {{ site.title }}
     </a>
     <div class="nav-links">

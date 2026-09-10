@@ -1,5 +1,16 @@
 title: "Merrill Lab @ TTIC"
 
+# Brand colors (TTIC blue palette — https://www.ttic.edu)
+brand_color: "#006eb6"       # TTIC primary blue
+brand_color_dark: "#005494"  # darker blue for hover/active states
+# Previous red palette:
+# brand_color: "#7f2a23"
+# brand_color_dark: "#5b1e1a"
+
+# Logo and favicon paths — swap to -red variants to revert
+logo_path: "assets/images/ship-logo-blue.png"
+favicon_dir: "assets/images/favicon-blue"
+
 # UI feature flags
 hide_navbar_logo: true   # set false to show logo in the navbar brand
 hide_title_logo: false   # set true to hide logo in non-homepage page titles
