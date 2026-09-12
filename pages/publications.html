@@ -4,7 +4,7 @@ permalink: /publications.html
 title: "Publications | LEIF Lab @ TTIC"
 description: "Publications from LEIF Lab."
 eyebrow: Publications
-heading: Recent work from the lab
+heading: Recent research
 ---
 <p class="publication-note">This is a selected list. For a complete list of publications, see <a href="https://scholar.google.com/citations?user=CyjChJQAAAAJ">Google Scholar</a>.</p>
 <section class="layout-card">
@@ -12,14 +12,12 @@ heading: Recent work from the lab
     {% for year_data in site.data.publications %}
       {% assign pubs = year_data.publications %}
       {% for pub in pubs %}
-        {% if forloop.first and pubs.size > 1 %}
+        {% if forloop.first %}
           {% assign li_class = "group-first" %}
-        {% elsif forloop.first %}
-          {% assign li_class = "" %}
         {% else %}
           {% assign li_class = "group-rest" %}
         {% endif %}
-        <li{% if li_class != "" %} class="{{ li_class }}"{% endif %}>
+        <li class="{{ li_class }}">
           <span class="pub-year">{% if forloop.first %}{{ year_data.year }}{% endif %}</span>
           <div>
             <p class="pub-title"><a href="{{ pub.link }}">{{ pub.title }}</a></p>

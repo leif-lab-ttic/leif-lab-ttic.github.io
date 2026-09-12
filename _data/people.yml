@@ -30,4 +30,6 @@ collaborators:
     photo: /assets/images/headshots/ashish-sabharwal.jpeg
 
 alumni:
-  - '<a href="https://www.yanhongli.com/">Yanhong Li</a> — Member of Technical Staff at Thinking Machines'
+  - name: Yanhong Li
+    url: https://www.yanhongli.com/
+    note: Member of Technical Staff, Thinking Machines
