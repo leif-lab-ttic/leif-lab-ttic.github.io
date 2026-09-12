@@ -144,6 +144,7 @@ h3 {
   font-family: Georgia, "Times New Roman", serif;
   line-height: 1.1;
   margin-top: 0;
+  color: var(--brand-dark);
 }
 
 h1 {
@@ -160,6 +161,7 @@ h3 {
   font-size: 1.35rem;
   margin-bottom: 0.5rem;
 }
+
 
 .lede {
   max-width: 62ch;
@@ -424,14 +426,22 @@ h3 {
 }
 
 .pub-year {
-  color: var(--brand-dark);
+  color: var(--muted);
   font-weight: 700;
 }
 
 .pub-title {
   margin: 0 0 0.25rem;
   font-weight: 600;
-  color: var(--ink);
+}
+
+.pub-title a {
+  color: var(--brand-dark);
+  text-decoration: none;
+}
+
+.pub-title a:hover {
+  color: var(--brand);
 }
 
 .pub-meta {
@@ -440,8 +450,7 @@ h3 {
 }
 
 .lab-member {
-  text-decoration: underline;
-  text-underline-offset: 2px;
+  font-weight: 600;
 }
 
 .pub-links {

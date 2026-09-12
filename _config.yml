@@ -1,4 +1,4 @@
-title: "Merrill Lab @ TTIC"
+title: "LEIF Lab @ TTIC"
 
 # Brand colors (TTIC blue palette — https://www.ttic.edu)
 brand_color: "#006eb6"       # TTIC primary blue
@@ -15,7 +15,7 @@ favicon_dir: "assets/images/favicon-blue"
 hide_navbar_logo: true   # set false to show logo in the navbar brand
 hide_title_logo: false   # set true to hide logo in non-homepage page titles
 description: "Research on learning, reasoning, and intelligence at the Toyota Technological Institute at Chicago."
-copyright: "© 2026 Merrill Lab"
+copyright: "© 2026 LEIF Lab"
 url: "https://merrill-lab.github.io"
 baseurl: ""
 

@@ -1,73 +1,37 @@
 ---
 layout: default
 permalink: /publications.html
-title: "Publications | Merrill Lab @ TTIC"
-description: "Publications from the Merrill Lab."
+title: "Publications | LEIF Lab @ TTIC"
+description: "Publications from LEIF Lab."
 eyebrow: Publications
 heading: Recent work from the lab
 ---
 <p class="publication-note">This is a selected list. For a complete list of publications, see <a href="https://scholar.google.com/citations?user=CyjChJQAAAAJ">Google Scholar</a>.</p>
 <section class="layout-card">
   <ul class="publication-list">
-    <li class="group-first">
-      <span class="pub-year">2026</span>
-      <div>
-        <p class="pub-title">Olmo Hybrid: From Theory to Practice and Back</p>
-        <p class="pub-meta"><span class="lab-member">William Merrill</span>, Yanhong Li, Tyler Romero, Anej Svete, <i>et al.</i></p>
-        <div class="pub-links">
-          <a class="button secondary small" href="https://openreview.net/forum?id=LGhKvHMtVK">COLM</a>
-          <a class="button secondary small" href="https://arxiv.org/abs/2604.03444">arXiv</a>
-          <a class="button secondary small" href="https://github.com/allenai/OLMo-core/tree/main/src/scripts/official/OLMo-hybrid">Code</a>
-          <a class="button secondary small" href="https://allenai.org/blog/olmohybrid">Blog</a>
-          <a class="button accent small" href="https://www.interconnects.ai/p/olmo-hybrid-and-future-llm-architectures">Interconnects</a>
-        </div>
-      </div>
-    </li>
-    <li class="group-rest">
-      <span class="pub-year"></span>
-      <div>
-        <p class="pub-title">Context-Free Recognition with Transformers</p>
-        <p class="pub-meta"><span class="lab-member">Selim Jerad</span>, Anej Svete, Sophie Hao, Ryan Cotterell, and <span class="lab-member">William Merrill</span></p>
-        <div class="pub-links">
-          <a class="button secondary small" href="https://openreview.net/forum?id=ACn1hhGcV4">ICML</a>
-          <a class="button secondary small" href="https://arxiv.org/abs/2601.01754">arXiv</a>
-        </div>
-      </div>
-    </li>
-    <li class="group-first">
-      <span class="pub-year">2024</span>
-      <div>
-        <p class="pub-title">The Illusion of State in State-Space Models</p>
-        <p class="pub-meta"><span class="lab-member">William Merrill</span>, Jackson Petty, and Ashish Sabharwal</p>
-        <div class="pub-links">
-          <a class="button secondary small" href="https://openreview.net/forum?id=QZgo9JZpLq">ICML</a>
-          <a class="button secondary small" href="https://arxiv.org/abs/2404.08819">arXiv</a>
-          <a class="button secondary small" href="https://github.com/jopetty/word-problem">Code</a>
-        </div>
-      </div>
-    </li>
-    <li class="group-rest">
-      <span class="pub-year"></span>
-      <div>
-        <p class="pub-title">The Expressive Power of Transformers with Chain of Thought</p>
-        <p class="pub-meta"><span class="lab-member">William Merrill</span> and Ashish Sabharwal</p>
-        <div class="pub-links">
-          <a class="button secondary small" href="https://openreview.net/forum?id=NjNGlPh8Wh">ICLR</a>
-          <a class="button secondary small" href="https://arxiv.org/abs/2310.07923">arXiv</a>
-          <a class="button accent small" href="https://www.quantamagazine.org/how-chain-of-thought-reasoning-helps-neural-networks-compute-20240321/">Quanta</a>
-        </div>
-      </div>
-    </li>
-    <li>
-      <span class="pub-year">2023</span>
-      <div>
-        <p class="pub-title">The Parallelism Tradeoff: Limitations of Log-Precision Transformers</p>
-        <p class="pub-meta"><span class="lab-member">William Merrill</span> and Ashish Sabharwal</p>
-        <div class="pub-links">
-          <a class="button secondary small" href="https://aclanthology.org/2023.tacl-1.31/">TACL</a>
-          <a class="button secondary small" href="https://arxiv.org/abs/2207.00729">arXiv</a>
-        </div>
-      </div>
-    </li>
+    {% for year_data in site.data.publications %}
+      {% assign pubs = year_data.publications %}
+      {% for pub in pubs %}
+        {% if forloop.first and pubs.size > 1 %}
+          {% assign li_class = "group-first" %}
+        {% elsif forloop.first %}
+          {% assign li_class = "" %}
+        {% else %}
+          {% assign li_class = "group-rest" %}
+        {% endif %}
+        <li{% if li_class != "" %} class="{{ li_class }}"{% endif %}>
+          <span class="pub-year">{% if forloop.first %}{{ year_data.year }}{% endif %}</span>
+          <div>
+            <p class="pub-title"><a href="{{ pub.link }}">{{ pub.title }}</a></p>
+            <p class="pub-meta">{% assign last_author = pub.authors | last %}{% for author in pub.authors %}{% if author.lab %}<span class="lab-member">{% endif %}{% if author.et_al %}<i>{% endif %}{{ author.name }}{% if author.et_al %}</i>{% endif %}{% if author.lab %}</span>{% endif %}{% unless forloop.last %}{% if forloop.rindex == 2 and last_author.et_al != true %}{% if pub.authors.size > 2 %}, and {% else %} and {% endif %}{% else %}, {% endif %}{% endunless %}{% endfor %}</p>
+            <div class="pub-links">
+              {% for btn in pub.buttons %}
+                <a class="button {% if btn.highlight %}accent{% else %}secondary{% endif %} small" href="{{ btn.href }}">{{ btn.name }}</a>
+              {% endfor %}
+            </div>
+          </div>
+        </li>
+      {% endfor %}
+    {% endfor %}
   </ul>
 </section>

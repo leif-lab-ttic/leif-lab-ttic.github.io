@@ -1,0 +1,63 @@
+- year: 2026
+  publications:
+    - title: "OLMo Hybrid: From Theory to Practice and Back"
+      link: "https://arxiv.org/abs/2604.03444"
+      authors:
+        - {name: "William Merrill", lab: true}
+        - {name: "Yanhong Li"}
+        - {name: "Tyler Romero"}
+        - {name: "Anej Svete"}
+        - {name: "Caia Costello"}
+        - {name: "et al.", et_al: true}
+      buttons:
+        - {name: "COLM", href: "https://openreview.net/forum?id=LGhKvHMtVK"}
+        - {name: "arXiv", href: "https://arxiv.org/abs/2604.03444"}
+        - {name: "Code", href: "https://github.com/allenai/OLMo-core/tree/main/src/scripts/official/OLMo-hybrid"}
+        - {name: "Blog", href: "https://allenai.org/blog/olmohybrid"}
+        - {name: "Interconnects", href: "https://www.interconnects.ai/p/olmo-hybrid-and-future-llm-architectures", highlight: true}
+
+    - title: "Context-Free Recognition with Transformers"
+      link: "https://arxiv.org/abs/2601.01754"
+      authors:
+        - {name: "Selim Jerad", lab: true}
+        - {name: "Anej Svete"}
+        - {name: "Sophie Hao"}
+        - {name: "Ryan Cotterell"}
+        - {name: "William Merrill", lab: true}
+      buttons:
+        - {name: "ICML", href: "https://openreview.net/forum?id=ACn1hhGcV4"}
+        - {name: "arXiv", href: "https://arxiv.org/abs/2601.01754"}
+
+- year: 2024
+  publications:
+    - title: "The Illusion of State in State-Space Models"
+      link: "https://arxiv.org/abs/2404.08819"
+      authors:
+        - {name: "William Merrill", lab: true}
+        - {name: "Jackson Petty"}
+        - {name: "Ashish Sabharwal"}
+      buttons:
+        - {name: "ICML", href: "https://openreview.net/forum?id=QZgo9JZpLq"}
+        - {name: "arXiv", href: "https://arxiv.org/abs/2404.08819"}
+        - {name: "Code", href: "https://github.com/jopetty/word-problem"}
+
+    - title: "The Expressive Power of Transformers with Chain of Thought"
+      link: "https://arxiv.org/abs/2310.07923"
+      authors:
+        - {name: "William Merrill", lab: true}
+        - {name: "Ashish Sabharwal"}
+      buttons:
+        - {name: "ICLR", href: "https://openreview.net/forum?id=NjNGlPh8Wh"}
+        - {name: "arXiv", href: "https://arxiv.org/abs/2310.07923"}
+        - {name: "Quanta", href: "https://www.quantamagazine.org/how-chain-of-thought-reasoning-helps-neural-networks-compute-20240321/", highlight: true}
+
+- year: 2023
+  publications:
+    - title: "The Parallelism Tradeoff: Limitations of Log-Precision Transformers"
+      link: "https://arxiv.org/abs/2207.00729"
+      authors:
+        - {name: "William Merrill", lab: true}
+        - {name: "Ashish Sabharwal"}
+      buttons:
+        - {name: "TACL", href: "https://aclanthology.org/2023.tacl-1.31/"}
+        - {name: "arXiv", href: "https://arxiv.org/abs/2207.00729"}
