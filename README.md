@@ -1,3 +1,3 @@
 # Merrill Research Group
 
-Website for the Merrill Research Group (~~Lambda Lab~~) at the Toyota Technological Institute
+Website for the ~~Lambda~~ ~~Merrill~~ LEIF Lab at the Toyota Technological Institute
