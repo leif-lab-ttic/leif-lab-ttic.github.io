@@ -7,6 +7,8 @@ pi:
 students:
   - name: Tarun Gupta
     role: PhD Student, TTIC
+    photo: /assets/images/headshots/tarun-gupta.png
+    url: https://tarun360.github.io/
   - name: Selim Jerad
     role: PhD Student, TTIC
     url: https://selimjerad.github.io/
@@ -15,6 +17,16 @@ students:
     url: https://ut21.github.io/
 
 collaborators:
+  - name: David Chiang
+    role: Associate Professor, Notre Dame
+    url: https://www3.nd.edu/~dchiang/
+  - name: Andy Yang
+    role: PhD Student, Notre Dame
+    url: https://pentagonalize.github.io/
+  - name: Ashish Sabharwal
+    role: Principal Research Scientist, Ai2
+    url: https://www.cs.cornell.edu/~sabhar/
+    photo: /assets/images/headshots/ashish-sabharwal.jpeg
   - name: Yashas Samaga
     role: PhD Student, UW
     url: https://github.com/YashasSamaga
@@ -24,10 +36,6 @@ collaborators:
   - name: Jackson Petty
     role: PhD Student, NYU
     url: https://jacksonpetty.org/about/
-  - name: Ashish Sabharwal
-    role: Principal Research Scientist, Ai2
-    url: https://www.cs.cornell.edu/~sabhar/
-    photo: /assets/images/headshots/ashish-sabharwal.jpeg
 
 alumni:
   - name: Yanhong Li
