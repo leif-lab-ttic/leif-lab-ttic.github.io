@@ -15,6 +15,7 @@ students:
   - name: Utkarsh Tiwari
     role: PhD Student, TTIC
     url: https://ut21.github.io/
+    photo: /assets/images/headshots/utkarsh-tiwari.jpeg
 
 collaborators:
   - name: David Chiang
