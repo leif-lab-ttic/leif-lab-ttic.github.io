@@ -405,6 +405,7 @@ h3 {
 
 .pub-links {
   display: flex;
+  flex-wrap: wrap;
   gap: 0.6rem;
   margin-top: 0.6rem;
 }
@@ -506,6 +507,10 @@ h3 {
   line-height: 1.2;
 }
 
+.footer-right {
+  text-align: right;
+}
+
 @media (max-width: 780px) {
   .nav {
     flex-direction: column;
@@ -526,5 +531,9 @@ h3 {
 
   .footer-inner {
     flex-direction: column;
+  }
+
+  .footer-right {
+    text-align: left;
   }
 }

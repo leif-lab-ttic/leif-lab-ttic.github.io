@@ -1,6 +1,6 @@
 - year: 2026
   publications:
-    - title: "OLMo Hybrid: From Theory to Practice and Back"
+    - title: "Olmo Hybrid: From Theory to Practice and Back"
       link: "https://arxiv.org/abs/2604.03444"
       authors:
         - {name: "William Merrill", lab: true}
