@@ -7,11 +7,12 @@ pi:
 students:
   - name: Tarun Gupta
     role: PhD Student, TTIC
-    photo: /assets/images/headshots/tarun-gupta.png
     url: https://tarun360.github.io/
+    photo: /assets/images/headshots/tarun-gupta.png
   - name: Selim Jerad
     role: PhD Student, TTIC
     url: https://selimjerad.github.io/
+    photo: /assets/images/headshots/selim-jerad.jpg
   - name: Utkarsh Tiwari
     role: PhD Student, TTIC
     url: https://ut21.github.io/
