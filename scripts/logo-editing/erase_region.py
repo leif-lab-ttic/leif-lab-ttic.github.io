@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Zero the alpha channel in a rectangular region of ship-logo.png.
+"""Zero the alpha channel in a rectangular region of the master logo (ship-logo-master.png).
 
 Useful for clearing sail icons before redrawing them.
 
@@ -13,7 +13,7 @@ import sys
 from PIL import Image
 import numpy as np
 
-SRC = "assets/images/ship-logo.png"
+SRC = "scripts/logo-editing/ship-logo-master.png"
 
 if len(sys.argv) != 5:
     print("Usage: erase_region.py Y0 Y1 X0 X1")

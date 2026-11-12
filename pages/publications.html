@@ -2,34 +2,32 @@
 layout: default
 permalink: /publications.html
 title: "Publications | LEIF Lab @ TTIC"
-description: "Publications from LEIF Lab."
-eyebrow: Publications
-heading: Recent research
+description: "Selected publications from LEIF Lab at TTIC."
+heading: Publications
 ---
-<p class="publication-note">This is a selected list. For a complete list of publications, see <a href="https://scholar.google.com/citations?user=CyjChJQAAAAJ">Google Scholar</a>.</p>
-<section class="layout-card">
+<p class="intro">A selected list. For a complete list of publications, see <a href="https://scholar.google.com/citations?user=CyjChJQAAAAJ">Google Scholar</a>.</p>
+
+{% for year_data in site.data.publications %}
+<section class="pub-year-group">
+  <h2 class="pub-year">{{ year_data.year }}</h2>
   <ul class="publication-list">
-    {% for year_data in site.data.publications %}
-      {% assign pubs = year_data.publications %}
-      {% for pub in pubs %}
-        {% if forloop.first %}
-          {% assign li_class = "group-first" %}
-        {% else %}
-          {% assign li_class = "group-rest" %}
+    {% for pub in year_data.publications %}
+    <li class="publication{% if pub.figure or pub.emblem %} has-figure{% endif %}">
+      {% if pub.figure %}
+      <a class="pub-figure" href="{{ pub.link }}" tabindex="-1"><img src="{{ pub.figure | relative_url }}" alt="{{ pub.figure_alt }}" loading="lazy" /></a>
+      {% elsif pub.emblem %}
+      {% assign emblem_file = "emblems/" | append: pub.emblem | append: ".svg" %}
+      <div class="pub-figure pub-emblem">{% include {{ emblem_file }} %}</div>
+      {% endif %}
+      <div class="pub-body">
+        <p class="pub-title"><a href="{{ pub.link }}">{{ pub.title }}</a></p>
+        <p class="pub-authors">{% assign last_author = pub.authors | last %}{% for author in pub.authors %}{% if author.lab %}<span class="lab-member">{% endif %}{% if author.et_al %}<i>{% endif %}{{ author.name }}{% if author.et_al %}</i>{% endif %}{% if author.lab %}</span>{% endif %}{% unless forloop.last %}{% if forloop.rindex == 2 and last_author.et_al != true %}{% if pub.authors.size > 2 %}, and {% else %} and {% endif %}{% else %}, {% endif %}{% endunless %}{% endfor %}</p>
+        {% if pub.venue or pub.links or pub.coverage %}
+        <p class="pub-links">{% if pub.venue %}<a class="pub-venue" href="{{ pub.venue.href }}">{{ pub.venue.name }}</a>{% endif %}{% for l in pub.links %}{% if pub.venue or forloop.index > 1 %} · {% endif %}<a href="{{ l.href }}">{{ l.name }}</a>{% endfor %}{% if pub.coverage %}{% if pub.venue or pub.links %} · {% endif %}<span class="pub-coverage">Coverage: {% for c in pub.coverage %}<a href="{{ c.href }}">{{ c.name }}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}</span>{% endif %}</p>
         {% endif %}
-        <li class="{{ li_class }}">
-          <span class="pub-year">{% if forloop.first %}{{ year_data.year }}{% endif %}</span>
-          <div>
-            <p class="pub-title"><a href="{{ pub.link }}">{{ pub.title }}</a></p>
-            <p class="pub-meta">{% assign last_author = pub.authors | last %}{% for author in pub.authors %}{% if author.lab %}<span class="lab-member">{% endif %}{% if author.et_al %}<i>{% endif %}{{ author.name }}{% if author.et_al %}</i>{% endif %}{% if author.lab %}</span>{% endif %}{% unless forloop.last %}{% if forloop.rindex == 2 and last_author.et_al != true %}{% if pub.authors.size > 2 %}, and {% else %} and {% endif %}{% else %}, {% endif %}{% endunless %}{% endfor %}</p>
-            <div class="pub-links">
-              {% for btn in pub.buttons %}
-                <a class="button {% if btn.highlight %}accent{% else %}secondary{% endif %} small" href="{{ btn.href }}">{{ btn.name }}</a>
-              {% endfor %}
-            </div>
-          </div>
-        </li>
-      {% endfor %}
+      </div>
+    </li>
     {% endfor %}
   </ul>
 </section>
+{% endfor %}

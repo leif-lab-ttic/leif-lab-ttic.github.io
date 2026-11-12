@@ -2,6 +2,10 @@
 # Builds the site and checks it for broken links, missing images, and HTML errors.
 set -euo pipefail
 
+# html-proofer silently skips files with non-ASCII characters under a non-UTF-8 locale.
+export LANG="${LANG:-en_US.UTF-8}"
+export LC_ALL="${LC_ALL:-en_US.UTF-8}"
+
 REPO_ROOT="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$REPO_ROOT"
 

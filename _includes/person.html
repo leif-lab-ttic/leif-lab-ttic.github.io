@@ -1,0 +1,12 @@
+{% assign p = include.person %}
+<li class="person">
+  {% if p.photo %}
+  <img class="portrait" src="{{ p.photo | relative_url }}" alt="{{ p.name }}" loading="lazy" />
+  {% else %}
+  <div class="portrait portrait-empty" aria-hidden="true">{{ p.name | slice: 0 }}</div>
+  {% endif %}
+  <p class="person-name">{% if p.url %}<a href="{{ p.url }}">{{ p.name }}</a>{% else %}{{ p.name }}{% endif %}</p>
+  {% if p.role %}<p class="person-role">{{ p.role }}</p>{% endif %}
+  {% if p.note %}<p class="person-role">{{ p.note }}</p>{% endif %}
+  {% if p.interests %}<p class="person-interests">{{ p.interests }}</p>{% endif %}
+</li>

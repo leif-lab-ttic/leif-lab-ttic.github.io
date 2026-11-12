@@ -2,37 +2,53 @@
 layout: home
 permalink: /
 title: "LEIF Lab @ TTIC"
-description: "LEIF Lab @ TTIC homepage and research information."
-eyebrow: <a href="https://www.ttic.edu/">Toyota Technological Institute at Chicago</a>
+description: "LEIF Lab at TTIC studies what transformers and other neural sequence models can and cannot compute."
 heading: LEIF Lab
+subheading: Language, Expressivity, Interpretability, and Formalism
 lede: >-
-  Welcome! We are a group of interdisciplinary researchers at TTIC interested in natural language, machine learning, and theoretical computer science.
-  A major focus of our work is better understanding the computational power of transformers and other neural sequence models via formal language theory,
-  motivated by fundamental curiosity, demystifying how LLMs work, and inspiring principled improvements to LLM architectures.
-cta_primary:
-  label: Meet the group
-  href: /people.html
-cta_secondary:
-  label: Recent research
-  href: /publications.html
+  Welcome! We are a group of interdisciplinary researchers at TTIC interested in natural language,
+  machine learning, and theoretical computer science. A core area of focus is studying what
+  transformers and other neural sequence models can and cannot compute, using formal language theory,
+  logic, and complexity, motivated by curiosity, demystifying how LLMs work, and designing better
+  architectures.
+photo: /assets/images/lab-photos/group.jpg
+photo_alt: "Photo of LEIF Lab members"
+
+# Research interests. `emblem` is one of: lambda, tree, plot (see _includes/emblems/).
+interests:
+  - title: Formal language theory
+    emblem: lambda
+    text: Automata, logic, and circuit complexity as lenses on neural networks and language, and as subjects in their own right.
+    papers:
+      - {title: "Context-Free Recognition with Transformers", href: "https://arxiv.org/abs/2601.01754"}
+  - title: Transformer expressivity
+    emblem: tree
+    text: Which problems transformers can and cannot solve, and how architectural choices shape their computational power.
+    papers:
+      - {title: "The Parallelism Tradeoff", href: "https://arxiv.org/abs/2207.00729"}
+      - {title: "Transformers with Chain of Thought", href: "https://arxiv.org/abs/2310.07923"}
+      - {title: "The Illusion of State in State-Space Models", href: "https://arxiv.org/abs/2404.08819"}
+  - title: Science of building LLMs
+    emblem: plot
+    text: A conceptual understanding of LLM architecture and optimization, applied to make open LLM development more principled.
+    papers:
+      - {title: "Olmo Hybrid", href: "https://arxiv.org/abs/2604.03444"}
 ---
 <section class="container section">
-  <div class="section-heading">
-    <!-- <p class="eyebrow">Research interests</p> -->
-    <h2>Research interests</h2>
-  </div>
-  <div class="card-grid three-up">
-    <article class="info-card">
-      <h3>Transformer expressivity</h3>
-      <p>Characterizing what problems neural networks like transformers can and cannot compute, and how architectural choices shape models' computational power.</p>
-    </article>
-    <article class="info-card">
-      <h3>Formal language theory</h3>
-      <p>Applying automata, logic, and circuit complexity to understand neural networks, LLMs, and language as well as exploring fundamental questions in these areas.</p>
-    </article>
-    <article class="info-card">
-      <h3>Science of building LLMs</h3>
-      <p>Conceptual understanding of LLM architecture and optimization. Applying these insights to make open LLM development more principled.</p>
-    </article>
-  </div>
+  <h2>Research interests</h2>
+  <ul class="interests">
+    {% for interest in page.interests %}
+    <li class="interest">
+      {% assign emblem_file = "emblems/" | append: interest.emblem | append: ".svg" %}
+      <div class="interest-emblem">{% include {{ emblem_file }} %}</div>
+      <div>
+        <h3>{{ interest.title }}</h3>
+        <p>{{ interest.text }}</p>
+        {% if interest.papers %}
+        <p class="interest-papers"><span class="label">See</span> {% for paper in interest.papers %}<a href="{{ paper.href }}"><cite>{{ paper.title }}</cite></a>{% unless forloop.last %} · {% endunless %}{% endfor %}</p>
+        {% endif %}
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
 </section>

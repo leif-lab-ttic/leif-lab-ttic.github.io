@@ -1,32 +1,34 @@
 ---
 ---
+/*
+  LEIF Lab stylesheet.
+  Palette borrows from illuminated manuscripts: black ink, lapis blue (TTIC blue,
+  set in _config.yml) for headings, links, and the knotwork ornament, and a
+  sparing red "rubric" for year labels and the drop cap.
+*/
 :root {
   --bg: #f7f4ef;
-  --panel: #fffdf9;
-  --panel-alt: #f0ebe4;
   --ink: #1d1c1a;
-  --muted: #66615d;
-  --line: rgba(29, 28, 26, 0.12);
+  --muted: #5e5751;
+  --line: rgba(29, 28, 26, 0.14);
   --brand: {{ site.brand_color | default: "#006eb6" }};
   --brand-dark: {{ site.brand_color_dark | default: "#005494" }};
-  --gold: #caa35d;
-  --shadow: 0 14px 30px rgba(33, 29, 25, 0.06);
+  --rubric: #7f2a23;
+  --serif: "Alegreya", Georgia, "Times New Roman", serif;
+  --small-caps: "Alegreya SC", "Alegreya", Georgia, serif;
 }
 
 * {
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   margin: 0;
-  font-family: "Segoe UI", Arial, sans-serif;
+  font-family: var(--serif);
+  font-size: 1.125rem;
+  line-height: 1.65;
   background: var(--bg);
   color: var(--ink);
-  line-height: 1.6;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -35,44 +37,67 @@ body {
 a {
   color: var(--brand-dark);
   text-decoration: underline;
-  text-decoration-color: var(--brand-dark);
-  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.15em;
 }
 
 a:hover {
   color: var(--brand);
 }
 
-img {
+img,
+svg {
   max-width: 100%;
   display: block;
 }
 
+h1,
+h2,
+h3 {
+  font-family: var(--serif);
+  font-weight: 700;
+  line-height: 1.15;
+  margin-top: 0;
+  color: var(--brand-dark);
+}
+
+h1 {
+  font-size: clamp(2.5rem, 5vw, 3.6rem);
+  margin-bottom: 0.25rem;
+}
+
+h2 {
+  font-size: 1.65rem;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.25rem;
+}
+
 .container {
-  width: min(1100px, calc(100% - 2rem));
+  width: min(1040px, calc(100% - 2.5rem));
   margin: 0 auto;
 }
 
+/* ---------- Navigation ---------- */
+
 .site-header {
-  background: rgba(255, 253, 249, 0.85);
-  backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--line);
-  position: sticky;
-  top: 0;
-  z-index: 20;
 }
 
 .nav {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  min-height: 72px;
+  align-items: baseline;
+  padding: 1.1rem 0;
 }
 
 .brand {
-  font-size: 1.4rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
+  font-family: var(--small-caps);
+  font-size: 1.35rem;
+  font-weight: 500;
   color: var(--brand-dark);
   text-decoration: none;
   display: flex;
@@ -81,26 +106,24 @@ img {
 }
 
 .nav-logo {
-  height: 44px;
+  height: 40px;
   width: auto;
-  display: inline-block;
 }
 
 .nav-links {
   display: flex;
   gap: 1.5rem;
-  align-items: center;
 }
 
 .nav-links a {
-  color: var(--muted);
-  font-size: 0.98rem;
+  color: var(--ink);
   text-decoration: none;
-  transition: color 0.2s ease;
 }
 
 .nav-links a.active {
   color: var(--brand-dark);
+  text-decoration: underline;
+  text-decoration-color: var(--brand-dark);
 }
 
 .nav-links a:hover {
@@ -109,431 +132,421 @@ img {
 
 main {
   flex: 1;
-  padding-bottom: 4rem;
+  padding-bottom: 3rem;
 }
+
+/* ---------- Home ---------- */
 
 .hero {
   display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 2rem;
-  padding: 4.5rem 0 3rem;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 3rem;
+  padding: 3.5rem 0 1.5rem;
   align-items: center;
-}
-
-.eyebrow {
-  margin: 0 0 0.7rem;
-  color: var(--brand-dark);
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  font-size: 0.74rem;
-  font-weight: 700;
-}
-
-.eyebrow a {
-  color: inherit;
-  text-decoration: none;
-}
-
-.eyebrow a:hover {
-  color: var(--brand);
-}
-
-h1,
-h2,
-h3 {
-  font-family: Georgia, "Times New Roman", serif;
-  line-height: 1.1;
-  margin-top: 0;
-  color: var(--brand-dark);
-}
-
-h1 {
-  font-size: clamp(2.6rem, 5vw, 4.3rem);
-  margin-bottom: 1rem;
-}
-
-h2 {
-  font-size: clamp(1.8rem, 2vw, 2.4rem);
-  margin-bottom: 0.8rem;
-}
-
-h3 {
-  font-size: 1.35rem;
-  margin-bottom: 0.5rem;
-}
-
-
-.lede {
-  max-width: 62ch;
-  font-size: 1.08rem;
-  color: var(--muted);
-}
-
-.cta-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-top: 1.5rem;
-}
-
-.button {
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.4rem;
-  min-height: 44px;
-  padding: 0.75rem 1.25rem;
-  border-radius: 999px;
-  font-weight: 600;
-  border: 1px solid var(--line);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.button:hover {
-  transform: translateY(-1px);
-  box-shadow: var(--shadow);
-}
-
-.button.primary {
-  background: var(--brand-dark);
-  color: white;
-  border-color: var(--brand-dark);
-}
-
-.button.primary:hover {
-  background: var(--brand);
-  border-color: var(--brand);
-}
-
-.button.secondary {
-  background: transparent;
-  color: var(--brand-dark);
-}
-
-.button.secondary:hover {
-  color: var(--brand);
-}
-
-.button.accent {
-  background: var(--brand-dark);
-  color: white;
-  border-color: var(--brand-dark);
-}
-
-.button.accent:hover {
-  background: var(--brand);
-  border-color: var(--brand);
-}
-
-.button.small {
-  min-height: 32px;
-  padding: 0.35rem 0.9rem;
-  font-size: 0.85rem;
-  font-weight: 500;
-}
-
-.hero-panel,
-.info-card,
-.layout-card,
-.person-card {
-  background: var(--panel);
-  border: 1px solid var(--line);
-  border-radius: 18px;
-  box-shadow: var(--shadow);
-}
-
-.hero-panel {
-  padding: 0;
-  overflow: hidden;
-  background: none;
-  border: none;
-  box-shadow: none;
-  border-radius: 12px;
-}
-
-.lab-photo {
-  display: block;
-  width: 100%;
-  height: auto;
 }
 
 .hero-heading-row {
   display: flex;
   align-items: center;
   gap: 1.25rem;
-  margin-bottom: 1rem;
-}
-
-.hero-heading-row h1 {
-  margin-bottom: 0;
+  margin-bottom: 1.5rem;
 }
 
 .hero-ship {
-  height: 110px;
+  height: 104px;
   width: auto;
   flex-shrink: 0;
-  transform: translateY(-8px);
 }
 
-.hero-panel h2 {
-  font-size: 1.6rem;
-  margin-bottom: 1rem;
-}
-
-.hero-panel ul {
+.acronym {
+  font-family: var(--small-caps);
+  font-size: 1.2rem;
+  line-height: 1.35;
+  color: var(--ink);
   margin: 0;
-  padding-left: 1.1rem;
-  color: var(--muted);
+}
+
+.lede {
+  max-width: 60ch;
+  margin: 0;
+}
+
+/* The one manuscript flourish: a two-line red initial. */
+.lede::first-letter {
+  float: left;
+  font-size: 3.4em;
+  line-height: 0.9;
+  color: var(--rubric);
+  padding-right: 0.08em;
+  margin-top: 0.04em;
+}
+
+.hero-photo {
+  margin: 0;
+}
+
+.hero-photo img {
+  width: 100%;
+  height: auto;
+  border-radius: 3px;
 }
 
 .section {
   padding-top: 2rem;
 }
 
-.section-heading {
-  margin-bottom: 1.5rem;
+.interests {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-width: 46rem;
 }
 
-.card-grid {
+.interest {
   display: grid;
-  gap: 1.2rem;
+  grid-template-columns: 3.5rem 1fr;
+  gap: 1.5rem;
+  align-items: start;
+  margin-bottom: 1.75rem;
 }
 
-.three-up {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+.interest-emblem {
+  color: var(--brand-dark);
+  display: flex;
+  justify-content: center;
+  padding-top: 0.2rem;
 }
 
-.info-card {
-  padding: 1.5rem;
+.emblem {
+  height: 3.25rem;
+  width: auto;
 }
 
-.info-card p {
-  margin-bottom: 0;
+.interest p {
+  margin: 0;
+}
+
+.interest-papers {
+  margin-top: 0.3rem !important;
+  font-size: 1rem;
+}
+
+.interest-papers a {
+  text-decoration: none;
+}
+
+.interest-papers a:hover {
+  text-decoration: underline;
+}
+
+.label {
+  font-family: var(--small-caps);
   color: var(--muted);
+  margin-right: 0.2em;
 }
+
+/* ---------- Inner pages ---------- */
 
 .page-shell {
-  padding-top: 3rem;
+  padding-top: 2.75rem;
 }
 
 .page-header {
-  margin-bottom: 2rem;
-}
-
-.publication-note {
-  color: var(--muted);
-  margin: -0.75rem 0 1.5rem;
-}
-
-.publication-note a {
-  color: var(--brand-dark);
-  text-decoration: underline;
-  text-underline-offset: 2px;
-}
-
-.publication-note a:hover {
-  color: var(--brand);
-}
-
-.layout-card {
-  padding: 1.5rem 1.6rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
   margin-bottom: 1.5rem;
 }
 
-.layout-card p,
-.layout-card li,
-.person-card p,
-.alumni-list {
+.page-header h1 {
+  margin: 0;
+}
+
+.title-ship {
+  height: 72px;
+  width: auto;
+}
+
+.intro {
+  /* Matches the width of four People columns: 4 × 10rem + 3 × 2.5rem gaps. */
+  max-width: 47.5rem;
+  margin: 0 0 2rem;
+}
+
+/* ---------- People ---------- */
+
+.people-section {
+  margin-bottom: 2.5rem;
+}
+
+.people-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem 2.5rem;
+}
+
+.person {
+  width: 10rem;
+  text-align: center;
+}
+
+/* Arch-topped portraits, like manuscript miniatures or gothic windows. */
+.portrait {
+  width: 120px;
+  height: 150px;
+  border-radius: 60px 60px 0 0;
+  object-fit: cover;
+  object-position: center 30%;
+  margin: 0 auto 0.6rem;
+}
+
+.portrait-empty {
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  color: var(--brand-dark);
+  font-size: 2rem;
+}
+
+.person p {
+  margin: 0;
+  line-height: 1.35;
+}
+
+.person-name {
+  font-weight: 700;
+}
+
+.person-name a {
+  text-decoration: none;
+}
+
+.person-role {
   color: var(--muted);
+  font-size: 1rem;
+}
+
+.person-interests {
+  font-size: 1rem;
+  margin-top: 0.2rem !important;
+}
+
+.name-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  line-height: 1.9;
+}
+
+/* ---------- Publications ---------- */
+
+.pub-year-group {
+  display: grid;
+  grid-template-columns: 5rem 1fr;
+  gap: 1rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+}
+
+.pub-year-group:first-of-type {
+  border-top: none;
+  padding-top: 0;
+}
+
+.pub-year {
+  color: var(--rubric);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0.05rem 0 0;
 }
 
 .publication-list {
   list-style: none;
   margin: 0;
   padding: 0;
+  max-width: 58rem;
 }
 
-.publication-list li {
+.publication {
+  margin-bottom: 1.4rem;
+}
+
+.publication.has-figure {
   display: grid;
-  grid-template-columns: 72px 1fr;
-  gap: 1rem;
-  padding: 0 0 0.75rem;
+  grid-template-columns: 200px 1fr;
+  gap: 1.75rem;
+  align-items: start;
+  margin-bottom: 2rem;
 }
 
-.publication-list li:last-child {
-  padding-bottom: 0;
+.pub-figure img {
+  width: 100%;
+  height: auto;
+  max-height: 150px;
+  object-fit: contain;
+  object-position: left top;
+  /* Figures have white backgrounds; multiply lets them sit on the cream page. */
+  mix-blend-mode: multiply;
 }
 
-.publication-list li.group-first:not(:first-child) {
-  border-top: 1px solid var(--line);
-  padding-top: 0.75rem;
+.pub-emblem {
+  display: flex;
+  justify-content: center;
+  color: var(--brand-dark);
+  opacity: 0.45;
 }
 
-.publication-list li.group-rest > div {
-  border-top: 1px solid var(--line);
-  padding-top: 0.75rem;
+.pub-emblem .emblem {
+  height: 4.5rem;
 }
 
-.pub-year {
-  color: var(--muted);
-  font-weight: 700;
+.publication p {
+  margin: 0;
 }
 
 .pub-title {
-  margin: 0 0 0.25rem;
   font-weight: 600;
+  font-size: 1.15rem;
+  line-height: 1.35;
+  margin-bottom: 0.15rem !important;
 }
 
 .pub-title a {
-  color: var(--brand-dark);
   text-decoration: none;
-}
-
-.pub-title a:hover {
-  color: var(--brand);
-}
-
-.pub-meta {
-  margin: 0;
-  color: var(--muted);
 }
 
 .lab-member {
-  font-weight: 600;
-}
-
-.pub-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-  margin-top: 0.6rem;
-}
-
-.people-section {
-  margin-top: 2.5rem;
-  margin-bottom: 1.5rem;
-}
-
-.people-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1.2rem;
-}
-
-.person-card {
-  padding: 1.25rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 0.4rem;
-}
-
-.person-card h3 {
-  margin-top: 0;
-}
-
-.person-card p:last-child {
-  margin-bottom: 0;
-}
-
-.avatar {
-  width: 108px;
-  height: 108px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  background: linear-gradient(135deg, var(--brand), var(--gold));
-  color: white;
   font-weight: 700;
-  font-size: 1.6rem;
-  margin-bottom: 0.4rem;
 }
 
-.avatar-photo {
-  width: 108px;
-  height: 108px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 0.4rem;
+.pub-venue {
+  font-style: italic;
 }
 
-.person-card h3 a {
-  color: var(--brand-dark);
+.pub-links a,
+.pub-coverage a {
   text-decoration: none;
 }
 
-.person-card h3 a:hover {
-  color: var(--brand);
-}
-
-.person-role {
-  margin: 0 0 0.5rem;
-  color: var(--brand-dark);
-  font-weight: 600;
-}
-
-.alumni-list {
-  padding-left: 1.2rem;
-  line-height: 2;
-}
-
-.alumni-list a {
-  color: var(--brand-dark);
-}
-
-.alumni-list a:hover {
-  color: var(--brand);
+.pub-links a:hover,
+.pub-coverage a:hover {
   text-decoration: underline;
 }
 
+.pub-coverage {
+  color: var(--muted);
+}
+
+/* ---------- Footer ---------- */
+
 .site-footer {
-  border-top: 1px solid var(--line);
-  background: rgba(255, 253, 249, 0.7);
+  padding-top: 1rem;
 }
 
 .footer-inner {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 1.25rem 0;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1rem 0 1.5rem;
+  border-top: 1px solid var(--line);
   color: var(--muted);
-  font-size: 0.92rem;
+  font-size: 0.95rem;
 }
 
-.footer-identity p {
-  margin: 0;
-  line-height: 1.2;
+.knotwork {
+  height: 18px;
+  width: auto;
 }
 
 .footer-right {
   text-align: right;
 }
 
+.footer-inner p {
+  margin: 0;
+}
+
+.footer-inner a {
+  color: inherit;
+}
+
+/* ---------- Small screens ---------- */
+
 @media (max-width: 780px) {
   .nav {
     flex-direction: column;
-    justify-content: center;
-    padding: 0.85rem 0;
-    gap: 0.5rem;
-  }
-
-  .hero,
-  .three-up,
-  .people-grid {
-    grid-template-columns: 1fr;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.9rem 0;
   }
 
   .hero {
-    padding-top: 3rem;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding-top: 2.25rem;
+  }
+
+  .hero-ship {
+    height: 80px;
+  }
+
+  .title-ship {
+    height: 56px;
+  }
+
+  .interest {
+    grid-template-columns: 2.75rem 1fr;
+    gap: 1rem;
+  }
+
+  .emblem {
+    height: 2.5rem;
+  }
+
+  .pub-year-group {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .publication.has-figure {
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .pub-figure img {
+    max-width: 260px;
+  }
+
+  .pub-emblem {
+    display: none;
+  }
+
+  .people-grid {
+    justify-content: center;
+    gap: 1.75rem 1.5rem;
+  }
+
+  .person {
+    width: 9rem;
   }
 
   .footer-inner {
-    flex-direction: column;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+    gap: 0.5rem;
+  }
+
+  .knotwork {
+    order: -1;
   }
 
   .footer-right {
-    text-align: left;
+    text-align: center;
   }
 }

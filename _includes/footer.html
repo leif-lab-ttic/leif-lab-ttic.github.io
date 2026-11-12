@@ -1,12 +1,11 @@
 <footer class="site-footer">
   <div class="container footer-inner">
     <div class="footer-identity">
-      <p>Language, Expressivity, Interpretability, and Formalism (LEIF) Lab</p>
-      <p>Toyota Technological Institute at Chicago</p>
+      <p>LEIF Lab · <a href="https://www.ttic.edu/">Toyota Technological Institute at Chicago</a></p>
     </div>
+    <img class="knotwork" src="{{ '/assets/images/knotwork.png' | relative_url }}?v={{ site.time | date: '%s' }}" alt="" aria-hidden="true" />
     <div class="footer-identity footer-right">
-      <p>{{ site.copyright }}</p>
-      <p>LLMs used for web design</p>
+      <p>{{ site.copyright }} · LLMs used for web design</p>
     </div>
   </div>
 </footer>

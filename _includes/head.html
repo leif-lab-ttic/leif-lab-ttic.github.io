@@ -1,0 +1,35 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  {% assign page_description = page.description | default: site.description %}
+  {% assign og_image = page.og_image | default: site.og_image %}
+  <title>{{ page.title | default: site.title }}</title>
+  <meta name="description" content="{{ page_description }}" />
+  <link rel="canonical" href="{{ page.url | absolute_url }}" />
+
+  <!-- Social previews (Slack, Bluesky, X, etc.) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="{{ site.title }}" />
+  <meta property="og:title" content="{{ page.title | default: site.title }}" />
+  <meta property="og:description" content="{{ page_description }}" />
+  <meta property="og:url" content="{{ page.url | absolute_url }}" />
+  {% if og_image %}
+  <meta property="og:image" content="{{ '/' | append: og_image | absolute_url }}" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  {% endif %}
+
+  <!-- Fonts: Alegreya (body + headings) and Alegreya SC (true small caps) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..800;1,400..800&family=Alegreya+SC:wght@400;500&display=swap" />
+
+  <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}" />
+  {% if site.favicon_dir %}
+  <link rel="icon" type="image/x-icon" href="{{ '/' | append: site.favicon_dir | append: '/favicon.ico' | relative_url }}" />
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ '/' | append: site.favicon_dir | append: '/favicon-32x32.png' | relative_url }}" />
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ '/' | append: site.favicon_dir | append: '/favicon-16x16.png' | relative_url }}" />
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ '/' | append: site.favicon_dir | append: '/apple-touch-icon.png' | relative_url }}" />
+  {% endif %}
+</head>

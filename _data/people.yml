@@ -1,22 +1,23 @@
 pi:
   name: William Merrill
-  role: Assistant Professor, TTIC
+  role: Assistant Professor
   url: https://lambdaviking.com/
-  photo: /assets/images/headshots/william-merrill.png
+  photo: /assets/images/headshots/william-merrill.jpg
 
+# Optional per-person field: `interests: "..."` (one short line shown under the name)
 students:
   - name: Tarun Gupta
-    role: PhD Student, TTIC
+    role: PhD Student
     url: https://tarun360.github.io/
-    photo: /assets/images/headshots/tarun-gupta.png
+    photo: /assets/images/headshots/tarun-gupta.jpg
   - name: Selim Jerad
-    role: PhD Student, TTIC
+    role: PhD Student
     url: https://selimjerad.github.io/
     photo: /assets/images/headshots/selim-jerad.jpg
   - name: Utkarsh Tiwari
-    role: PhD Student, TTIC
+    role: PhD Student
     url: https://ut21.github.io/
-    photo: /assets/images/headshots/utkarsh-tiwari.jpeg
+    photo: /assets/images/headshots/utkarsh-tiwari.jpg
 
 collaborators:
   - name: David Chiang
@@ -28,7 +29,7 @@ collaborators:
   - name: Ashish Sabharwal
     role: Principal Research Scientist, Ai2
     url: https://www.cs.cornell.edu/~sabhar/
-    photo: /assets/images/headshots/ashish-sabharwal.jpeg
+    photo: /assets/images/headshots/ashish-sabharwal.jpg
   - name: Yashas Samaga
     role: PhD Student, UW
     url: https://github.com/YashasSamaga

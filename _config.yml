@@ -14,7 +14,8 @@ favicon_dir: "assets/images/favicon-blue"
 # UI feature flags
 hide_navbar_logo: true   # set false to show logo in the navbar brand
 hide_title_logo: false   # set true to hide logo in non-homepage page titles
-description: "Research on learning, reasoning, and intelligence at the Toyota Technological Institute at Chicago."
+description: "LEIF Lab at the Toyota Technological Institute at Chicago studies what transformers and other neural sequence models can and cannot compute."
+og_image: "assets/images/og-image.jpg"  # social preview image (1200x630)
 copyright: "© 2026 LEIF Lab"
 url: "https://leif-lab-ttic.github.io"
 baseurl: ""
@@ -26,6 +27,8 @@ exclude:
   - README.md
   - LICENSE
   - AGENTS.md
+  - CLAUDE.md
+  - scripts
   - Gemfile
   - Gemfile.lock
   - vendor

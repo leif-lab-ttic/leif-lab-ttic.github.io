@@ -1,3 +1,16 @@
+# Selected publications, grouped by year (newest first).
+#
+# Fields per publication:
+#   title     – paper title
+#   link      – arXiv (or main) URL; the title links here, so don't repeat it in `links`
+#   authors   – list of {name, lab: true (bold lab members), et_al: true (italic "et al.")}
+#   venue     – optional {name: "ICML 2024", href: OpenReview/anthology URL}; shown in italics
+#   links     – optional extra links, e.g. {name: "code", href: ...}
+#   coverage  – optional press coverage, e.g. {name: "Quanta", href: ...}
+#   figure    – optional thumbnail path, e.g. /assets/images/papers/foo.png (~560px wide PNG)
+#   figure_alt – alt text for the figure
+#   emblem    – optional fallback when there's no figure: lambda, tree, or plot
+
 - year: 2026
   publications:
     - title: "Olmo Hybrid: From Theory to Practice and Back"
@@ -9,12 +22,14 @@
         - {name: "Anej Svete"}
         - {name: "Caia Costello"}
         - {name: "et al.", et_al: true}
-      buttons:
-        - {name: "COLM", href: "https://openreview.net/forum?id=LGhKvHMtVK"}
-        - {name: "arXiv", href: "https://arxiv.org/abs/2604.03444"}
-        - {name: "Code", href: "https://github.com/allenai/OLMo-core/tree/main/src/scripts/official/OLMo-hybrid"}
-        - {name: "Blog", href: "https://allenai.org/blog/olmohybrid"}
-        - {name: "Interconnects", href: "https://www.interconnects.ai/p/olmo-hybrid-and-future-llm-architectures", highlight: true}
+      venue: {name: "COLM 2026", href: "https://openreview.net/forum?id=LGhKvHMtVK"}
+      links:
+        - {name: "code", href: "https://github.com/allenai/OLMo-core/tree/main/src/scripts/official/OLMo-hybrid"}
+        - {name: "blog", href: "https://allenai.org/blog/olmohybrid"}
+      coverage:
+        - {name: "Interconnects", href: "https://www.interconnects.ai/p/olmo-hybrid-and-future-llm-architectures"}
+      figure: /assets/images/papers/olmo-hybrid.png
+      figure_alt: "Scatter plot of average benchmark performance against training compute, with Olmo Hybrid 7B on the Pareto frontier"
 
     - title: "Context-Free Recognition with Transformers"
       link: "https://arxiv.org/abs/2601.01754"
@@ -24,9 +39,9 @@
         - {name: "Sophie Hao"}
         - {name: "Ryan Cotterell"}
         - {name: "William Merrill", lab: true}
-      buttons:
-        - {name: "ICML", href: "https://openreview.net/forum?id=ACn1hhGcV4"}
-        - {name: "arXiv", href: "https://arxiv.org/abs/2601.01754"}
+      venue: {name: "ICML 2026", href: "https://openreview.net/forum?id=ACn1hhGcV4"}
+      figure: /assets/images/papers/context-free-recognition.png
+      figure_alt: "Grid showing each operator position's value becoming known over O(log N) looped iterations"
 
 - year: 2024
   publications:
@@ -36,20 +51,22 @@
         - {name: "William Merrill", lab: true}
         - {name: "Jackson Petty"}
         - {name: "Ashish Sabharwal"}
-      buttons:
-        - {name: "ICML", href: "https://openreview.net/forum?id=QZgo9JZpLq"}
-        - {name: "arXiv", href: "https://arxiv.org/abs/2404.08819"}
-        - {name: "Code", href: "https://github.com/jopetty/word-problem"}
+      venue: {name: "ICML 2024", href: "https://openreview.net/forum?id=QZgo9JZpLq"}
+      links:
+        - {name: "code", href: "https://github.com/jopetty/word-problem"}
+      figure: /assets/images/papers/illusion-of-state.png
+      figure_alt: "Plots of the minimum number of layers needed by RNNs, SSMs, and transformers on group word problems in TC0 and NC1"
 
     - title: "The Expressive Power of Transformers with Chain of Thought"
       link: "https://arxiv.org/abs/2310.07923"
       authors:
         - {name: "William Merrill", lab: true}
         - {name: "Ashish Sabharwal"}
-      buttons:
-        - {name: "ICLR", href: "https://openreview.net/forum?id=NjNGlPh8Wh"}
-        - {name: "arXiv", href: "https://arxiv.org/abs/2310.07923"}
-        - {name: "Quanta", href: "https://www.quantamagazine.org/how-chain-of-thought-reasoning-helps-neural-networks-compute-20240321/", highlight: true}
+      venue: {name: "ICLR 2024", href: "https://openreview.net/forum?id=NjNGlPh8Wh"}
+      coverage:
+        - {name: "Quanta", href: "https://www.quantamagazine.org/how-chain-of-thought-reasoning-helps-neural-networks-compute-20240321/"}
+      figure: /assets/images/papers/transformers-chain-of-thought.png
+      figure_alt: "Nested diagrams placing CoT(1), CoT(log n), and CoT(n) among TC0, L, regular, context-free, and context-sensitive languages"
 
 - year: 2023
   publications:
@@ -58,6 +75,6 @@
       authors:
         - {name: "William Merrill", lab: true}
         - {name: "Ashish Sabharwal"}
-      buttons:
-        - {name: "TACL", href: "https://aclanthology.org/2023.tacl-1.31/"}
-        - {name: "arXiv", href: "https://arxiv.org/abs/2207.00729"}
+      venue: {name: "TACL 2023", href: "https://aclanthology.org/2023.tacl-1.31/"}
+      figure: /assets/images/papers/parallelism-tradeoff.svg
+      figure_alt: "Nested complexity classes AC0, TC0, NC1, L, and P, with log-precision transformers contained in TC0"
