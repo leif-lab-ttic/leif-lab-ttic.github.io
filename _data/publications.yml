@@ -6,7 +6,7 @@
 #   authors   – list of {name, lab: true (bold lab members), et_al: true (italic "et al.")}
 #   venue     – optional {name: "ICML 2024", href: OpenReview/anthology URL}; shown in italics
 #   links     – optional extra links, e.g. {name: "code", href: ...}
-#   coverage  – optional press coverage, e.g. {name: "Quanta", href: ...}
+#   coverage  – optional press coverage, e.g. {name: "Quanta", href: ...}; shown after `links`
 #   figure    – optional thumbnail path, e.g. /assets/images/papers/foo.png (~560px wide PNG)
 #   figure_alt – alt text for the figure
 #   emblem    – optional fallback when there's no figure: lambda, tree, or plot
@@ -25,7 +25,7 @@
       venue: {name: "COLM 2026", href: "https://openreview.net/forum?id=LGhKvHMtVK"}
       links:
         - {name: "code", href: "https://github.com/allenai/OLMo-core/tree/main/src/scripts/official/OLMo-hybrid"}
-        - {name: "blog", href: "https://allenai.org/blog/olmohybrid"}
+        - {name: "Ai2 blog", href: "https://allenai.org/blog/olmohybrid"}
       coverage:
         - {name: "Interconnects", href: "https://www.interconnects.ai/p/olmo-hybrid-and-future-llm-architectures"}
       figure: /assets/images/papers/olmo-hybrid.png

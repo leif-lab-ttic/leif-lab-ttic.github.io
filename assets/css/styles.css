@@ -426,18 +426,12 @@ main {
   font-style: italic;
 }
 
-.pub-links a,
-.pub-coverage a {
+.pub-links a {
   text-decoration: none;
 }
 
-.pub-links a:hover,
-.pub-coverage a:hover {
+.pub-links a:hover {
   text-decoration: underline;
-}
-
-.pub-coverage {
-  color: var(--muted);
 }
 
 /* ---------- Footer ---------- */

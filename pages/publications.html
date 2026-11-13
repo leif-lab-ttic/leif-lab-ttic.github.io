@@ -23,7 +23,7 @@ heading: Publications
         <p class="pub-title"><a href="{{ pub.link }}">{{ pub.title }}</a></p>
         <p class="pub-authors">{% assign last_author = pub.authors | last %}{% for author in pub.authors %}{% if author.lab %}<span class="lab-member">{% endif %}{% if author.et_al %}<i>{% endif %}{{ author.name }}{% if author.et_al %}</i>{% endif %}{% if author.lab %}</span>{% endif %}{% unless forloop.last %}{% if forloop.rindex == 2 and last_author.et_al != true %}{% if pub.authors.size > 2 %}, and {% else %} and {% endif %}{% else %}, {% endif %}{% endunless %}{% endfor %}</p>
         {% if pub.venue or pub.links or pub.coverage %}
-        <p class="pub-links">{% if pub.venue %}<a class="pub-venue" href="{{ pub.venue.href }}">{{ pub.venue.name }}</a>{% endif %}{% for l in pub.links %}{% if pub.venue or forloop.index > 1 %} · {% endif %}<a href="{{ l.href }}">{{ l.name }}</a>{% endfor %}{% if pub.coverage %}{% if pub.venue or pub.links %} · {% endif %}<span class="pub-coverage">Coverage: {% for c in pub.coverage %}<a href="{{ c.href }}">{{ c.name }}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}</span>{% endif %}</p>
+        <p class="pub-links">{% if pub.venue %}<a class="pub-venue" href="{{ pub.venue.href }}">{{ pub.venue.name }}</a>{% endif %}{% for l in pub.links %}{% if pub.venue or forloop.index > 1 %} · {% endif %}<a href="{{ l.href }}">{{ l.name }}</a>{% endfor %}{% for c in pub.coverage %}{% if pub.venue or pub.links or forloop.index > 1 %} · {% endif %}<a href="{{ c.href }}">{{ c.name }}</a>{% endfor %}</p>
         {% endif %}
       </div>
     </li>
